@@ -1,4 +1,4 @@
-div {
+.smiley, .logo, .result {
 	border: solid;
 }
 
@@ -24,6 +24,8 @@ div {
 .form {
 	text-align: center;
 	padding: 2em 0;
+	border-left: solid;
+	border-right: solid;
 }
 
 .column {
@@ -33,4 +35,8 @@ div {
 .column input {
 	display: block;
 	margin: 1em;
+}
+
+.result {
+	padding: 3em;
 }
