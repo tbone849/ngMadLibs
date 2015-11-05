@@ -21,3 +21,16 @@ div {
 	float: left;
 }
 
+.form {
+	text-align: center;
+	padding: 2em 0;
+}
+
+.column {
+	display: inline-block;
+}
+
+.column input {
+	display: block;
+	margin: 1em;
+}
