@@ -1,0 +1,23 @@
+div {
+	border: solid;
+}
+
+.container {
+	width: 60%;
+	margin: 4em auto;
+}
+
+.logos {
+	text-align: center;
+	overflow: auto;
+}
+
+.logos div {
+	height: 6em;
+	padding: 2em;
+}
+
+.smiley {
+	float: left;
+}
+
