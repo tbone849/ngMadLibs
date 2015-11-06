@@ -1,7 +1,7 @@
 angular.module('myApp', [])
     .controller('setInputs', function($scope) {
         $scope.madLib = {
-        	femaleName: '',
+        	name: '',
         	jobTitle: '',
         	tediousTask: '',
         	dirtyTask: '',
@@ -10,5 +10,16 @@ angular.module('myApp', [])
         	adjective: '',
         	obnoxiousCelebrity: '',
         	hugeNumber: ''
+        };
+        $scope.genders = ['male', 'female'];
+        $scope.selected = '';
+        $scope.male = {
+        	he: 'he',
+        	his: 'his',
+        	him: 'him',
+        }
+        $scope.female = {
+        	she: 'she',
+        	her: 'her'
         }
     });

@@ -21,7 +21,11 @@
 		<div class="form">
 			<h2>Provide the following words.</h2>
 			<div class="column">
-				<input type="text" placeholder="Female Name" ng-model="madLib.femaleName" />
+				<label for="genders">Gender</label>
+				<select name="genders" ng-model='selected'>
+					<option ng-repeat="gender in genders" value='{{gender}}'>{{gender}}</option>
+				</select>
+				<input type="text" placeholder="Name" ng-model="madLib.name" />
 				<input type="text" placeholder="Job Title" ng-model="madLib.jobTitle" />
 				<input type="text" placeholder="Tedious Task" ng-model="madLib.tediousTask" />
 			</div>
@@ -38,10 +42,10 @@
 		</div>
 		<div class="result">
 			<p>
-				<b>{{madLib.femaleName}}</b> was a <b>{{madLib.jobTitle}}</b> who loved technology. Although she loved parts of her job, she absolutely hated  <b>{{madLib.tediousTask}}</b> and <b>{{madLib.dirtyTask}}</b>. So, <b>{{madLib.femaleName}}</b> met with her life mentor <b>{{madLib.celebrity}}</b> who told her to learn how to <b>{{madLib.uselessSkill}}</b> with Thinkful. Thinkful didn't offer a course on <b>{{madLib.uselessSkill}}</b> so she studied programming instead.
+				<b>{{madLib.name}}</b> was a <b>{{madLib.jobTitle}}</b> who loved technology. Although <span ng-if="selected=='female'">{{female.she}}</span><span ng-if="selected=='male'">{{male.he}}</span> loved parts of <span ng-if="selected=='female'">{{female.her}}</span><span ng-if="selected=='male'">{{male.his}}</span> job, <span ng-if="selected=='female'">{{female.she}}</span><span ng-if="selected=='male'">{{male.he}}</span> absolutely hated  <b>{{madLib.tediousTask}}</b> and <b>{{madLib.dirtyTask}}</b>. So, <b>{{madLib.name}}</b> met with <span ng-if="selected=='female'">{{female.her}}</span><span ng-if="selected=='male'">{{male.his}}</span> life mentor <b>{{madLib.celebrity}}</b> who told <span ng-if="selected=='female'">{{female.her}}</span><span ng-if="selected=='male'">{{male.him}}</span> to learn how to <b>{{madLib.uselessSkill}}</b> with Thinkful. Thinkful didn't offer a course on <b>{{madLib.uselessSkill}}</b> so <span ng-if="selected=='female'">{{female.she}}</span><span ng-if="selected=='male'">{{male.he}}</span> studied programming instead.
 			</p>
 			<p>
-				What a great decision! With her new skills, <b>{{madLib.femaleName}}</b> built a(n) <b>{{madLib.adjective}}</b> robot named <b>{{madLib.obnoxiousCelebrity}}</b> that not only loved <b>{{madLib.dirtyTask}}</b> but did it <b>{{madLib.hugeNumber}}</b> times faster.
+				What a great decision! With <span ng-if="selected=='female'">{{female.her}}</span><span ng-if="selected=='male'">{{male.his}}</span> new skills, <b>{{madLib.name}}</b> built a(n) <b>{{madLib.adjective}}</b> robot named <b>{{madLib.obnoxiousCelebrity}}</b> that not only loved <b>{{madLib.dirtyTask}}</b> but did it <b>{{madLib.hugeNumber}}</b> times faster.
 			</p>
 		</div>
 	</div>
