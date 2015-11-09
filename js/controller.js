@@ -1,4 +1,4 @@
-angular.module('myApp', [])
+angular.module('myApp', ['ngMessages'])
     .controller('setInputs', function($scope) {
         $scope.madLib = {
         	name: '',
