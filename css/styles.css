@@ -37,6 +37,13 @@ html, input, button, option {
 	letter-spacing: 4px;
 }
 
+.error {
+	display: block;
+	width: 80%;
+	margin: .2em auto 0;
+	color: #ffff66;
+}
+
 .column {
 	display: inline-block;
 }
