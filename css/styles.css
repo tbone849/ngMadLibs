@@ -43,7 +43,7 @@ html, input, button, option {
 
 .column input {
 	display: block;
-	margin: 1em;
+	margin: 1em 1em 0 1em;
 }
 
 .result {

@@ -21,26 +21,56 @@
 		</div>
 		<div class="form">
 			<h2>Provide the following words.</h2>
-			<form name="madLibForm">
+			<form name="madLibForm" novalidate>
 				<div class="column">
 					<label for="genders">Gender</label>
 					<select name="genders" ng-model='selected' required>
 						<option></option>
 						<option ng-repeat="gender in genders" value='{{gender}}'>{{gender}}</option>
 					</select>
-					<input type="text" placeholder="Name" ng-model="madLib.name" required/>
-					<input type="text" placeholder="Job Title" ng-model="madLib.jobTitle" required />
-					<input type="text" placeholder="Tedious Task" ng-model="madLib.tediousTask" required />
+					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.genders.$error">
+    					<span class="error" ng-message="required">Field is required!</span>
+					</div>
+					<input type="text" placeholder="Name" name="name" ng-model="madLib.name" required/>
+					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.name.$error">
+    					<span class="error" ng-message="required">Field is required!</span>
+					</div>
+					<input type="text" placeholder="Job Title" name="job" ng-model="madLib.jobTitle" required />
+					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.job.$error">
+    					<span class="error" ng-message="required">Field is required!</span>
+					</div>
+					<input type="text" placeholder="Tedious Task" name="tediousTask" ng-model="madLib.tediousTask" required />
+					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.tediousTask.$error">
+    					<span class="error" ng-message="required">Field is required!</span>
+					</div>
 				</div>
 				<div class="column">
-					<input type="text" placeholder="Dirty Task" ng-model="madLib.dirtyTask" required />
-					<input type="text" placeholder="Celebrity" ng-model="madLib.celebrity" required />
-					<input type="text" placeholder="Useless Skill" ng-model="madLib.uselessSkill" required />
+					<input type="text" placeholder="Dirty Task" name="dirtyTask" ng-model="madLib.dirtyTask" required />
+					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.dirtyTask.$error">
+    					<span class="error" ng-message="required">Field is required!</span>
+					</div>
+					<input type="text" placeholder="Celebrity" name="celebrity" ng-model="madLib.celebrity" required />
+					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.celebrity.$error">
+    					<span class="error" ng-message="required">Field is required!</span>
+					</div>
+					<input type="text" placeholder="Useless Skill" name="uselessSkill" ng-model="madLib.uselessSkill" required />
+					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.uselessSkill.$error">
+    					<span class="error" ng-message="required">Field is required!</span>
+					</div>
 				</div>
 				<div class="column">
-					<input type="text" placeholder="Adjective" ng-model="madLib.adjective" required />
-					<input type="text" placeholder="Obnoxious Celebrity" ng-model="madLib.obnoxiousCelebrity" required />
-					<input type="number" placeholder="Huge Number" min="100" step="100" ng-model="madLib.hugeNumber" required />
+					<input type="text" placeholder="Adjective" name="adjective" ng-model="madLib.adjective" required />
+					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.adjective.$error">
+    					<span class="error" ng-message="required">Field is required!</span>
+					</div>
+					<input type="text" placeholder="Obnoxious Celebrity" name="obxCeleb" ng-model="madLib.obnoxiousCelebrity" required />
+					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.obxCeleb.$error">
+    					<span class="error" ng-message="required">Field is required!</span>
+					</div>
+					<input type="number" placeholder="Huge Number" name="hugeNumber" min="100" step="100" ng-model="madLib.hugeNumber" required />
+					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.hugeNumber.$error">
+    					<span class="error" ng-message="required">Field is required!</span>
+					</div>
 				</div>
 				<button type="submit">Generate Mad Lib</button>
 			</form>
