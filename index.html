@@ -19,7 +19,7 @@
 				<img src="images/logo.png" height="100%">
 			</div>
 		</div>
-		<div class="form">
+		<div class="form" ng-submit="submit()">
 			<h2>Provide the following words.</h2>
 			<form name="madLibForm" novalidate>
 				<div class="column">
@@ -75,7 +75,7 @@
 				<button type="submit">Generate Mad Lib</button>
 			</form>
 		</div>
-		<div class="result">
+		<div class="result" ng-if="goodForm">
 			<p>
 				<b>{{madLib.name}}</b> was a <b>{{madLib.jobTitle}}</b> who loved technology. Although <span ng-if="selected=='female'">{{female.she}}</span><span ng-if="selected=='male'">{{male.he}}</span> loved parts of <span ng-if="selected=='female'">{{female.her}}</span><span ng-if="selected=='male'">{{male.his}}</span> job, <span ng-if="selected=='female'">{{female.she}}</span><span ng-if="selected=='male'">{{male.he}}</span> absolutely hated  <b>{{madLib.tediousTask}}</b> and <b>{{madLib.dirtyTask}}</b>. So, <b>{{madLib.name}}</b> met with <span ng-if="selected=='female'">{{female.her}}</span><span ng-if="selected=='male'">{{male.his}}</span> life mentor <b>{{madLib.celebrity}}</b> who told <span ng-if="selected=='female'">{{female.her}}</span><span ng-if="selected=='male'">{{male.him}}</span> to learn how to <b>{{madLib.uselessSkill}}</b> with Thinkful. Thinkful didn't offer a course on <b>{{madLib.uselessSkill}}</b> so <span ng-if="selected=='female'">{{female.she}}</span><span ng-if="selected=='male'">{{male.he}}</span> studied programming instead.
 			</p>

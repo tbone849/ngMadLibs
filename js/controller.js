@@ -22,4 +22,11 @@ angular.module('myApp', ['ngMessages'])
         	she: 'she',
         	her: 'her'
         }
+        
+        $scope.goodForm = false;
+        $scope.submit = function(){
+            if($scope.madLibForm.$valid && $scope.madLibForm.$submitted){
+                $scope.goodForm = true;
+            }
+        }
     });
