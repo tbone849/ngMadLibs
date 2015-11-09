@@ -11,6 +11,7 @@ angular.module('myApp', ['ngMessages'])
         	obnoxiousCelebrity: '',
         	hugeNumber: ''
         };
+        $scope.madLibCopy = angular.copy($scope.madLib);
         $scope.genders = ['male', 'female'];
         $scope.selected = '';
         $scope.male = {
@@ -22,11 +23,17 @@ angular.module('myApp', ['ngMessages'])
         	she: 'she',
         	her: 'her'
         }
-        
+
         $scope.goodForm = false;
         $scope.submit = function(){
             if($scope.madLibForm.$valid && $scope.madLibForm.$submitted){
                 $scope.goodForm = true;
             }
+        }
+        $scope.clear = function(){
+            $scope.madLib = $scope.madLibCopy;
+            $scope.selected = '';
+            $scope.goodForm = false;
+            $scope.madLibForm.$setPristine();
         }
     });
