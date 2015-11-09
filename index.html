@@ -19,7 +19,7 @@
 				<img src="images/logo.png" height="100%">
 			</div>
 		</div>
-		<div class="form" ng-submit="submit()">
+		<div class="form" ng-show="goodForm==false" ng-submit="submit()">
 			<h2>Provide the following words.</h2>
 			<form name="madLibForm" novalidate>
 				<div class="column">
@@ -31,48 +31,48 @@
 					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.genders.$error">
     					<span class="error" ng-message="required">Field is required!</span>
 					</div>
-					<input type="text" placeholder="Name" name="name" ng-model="madLib.name" required/>
+					<input type="text" placeholder="Name" name="name" ng-model="madLib.name" autocomplete="off" required/>
 					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.name.$error">
     					<span class="error" ng-message="required">Field is required!</span>
 					</div>
-					<input type="text" placeholder="Job Title" name="job" ng-model="madLib.jobTitle" required />
+					<input type="text" placeholder="Job Title" name="job" ng-model="madLib.jobTitle" autocomplete="off" required />
 					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.job.$error">
     					<span class="error" ng-message="required">Field is required!</span>
 					</div>
-					<input type="text" placeholder="Tedious Task" name="tediousTask" ng-model="madLib.tediousTask" required />
+					<input type="text" placeholder="Tedious Task" name="tediousTask" ng-model="madLib.tediousTask" autocomplete="off" required />
 					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.tediousTask.$error">
     					<span class="error" ng-message="required">Field is required!</span>
 					</div>
 				</div>
 				<div class="column">
-					<input type="text" placeholder="Dirty Task" name="dirtyTask" ng-model="madLib.dirtyTask" required />
+					<input type="text" placeholder="Dirty Task" name="dirtyTask" ng-model="madLib.dirtyTask" autocomplete="off" required />
 					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.dirtyTask.$error">
     					<span class="error" ng-message="required">Field is required!</span>
 					</div>
-					<input type="text" placeholder="Celebrity" name="celebrity" ng-model="madLib.celebrity" required />
+					<input type="text" placeholder="Celebrity" name="celebrity" ng-model="madLib.celebrity" autocomplete="off" required />
 					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.celebrity.$error">
     					<span class="error" ng-message="required">Field is required!</span>
 					</div>
-					<input type="text" placeholder="Useless Skill" name="uselessSkill" ng-model="madLib.uselessSkill" required />
+					<input type="text" placeholder="Useless Skill" name="uselessSkill" ng-model="madLib.uselessSkill" autocomplete="off" required />
 					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.uselessSkill.$error">
     					<span class="error" ng-message="required">Field is required!</span>
 					</div>
 				</div>
 				<div class="column">
-					<input type="text" placeholder="Adjective" name="adjective" ng-model="madLib.adjective" required />
+					<input type="text" placeholder="Adjective" name="adjective" ng-model="madLib.adjective" autocomplete="off" required />
 					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.adjective.$error">
     					<span class="error" ng-message="required">Field is required!</span>
 					</div>
-					<input type="text" placeholder="Obnoxious Celebrity" name="obxCeleb" ng-model="madLib.obnoxiousCelebrity" required />
+					<input type="text" placeholder="Obnoxious Celebrity" name="obxCeleb" ng-model="madLib.obnoxiousCelebrity" autocomplete="off" required />
 					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.obxCeleb.$error">
     					<span class="error" ng-message="required">Field is required!</span>
 					</div>
-					<input type="number" placeholder="Huge Number" name="hugeNumber" min="100" step="100" ng-model="madLib.hugeNumber" required />
+					<input type="number" placeholder="Huge Number" name="hugeNumber" min="100" step="100" ng-model="madLib.hugeNumber" autocomplete="off" required />
 					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.hugeNumber.$error">
     					<span class="error" ng-message="required">Field is required!</span>
 					</div>
 				</div>
-				<button type="submit">Generate Mad Lib</button>
+				<button class="submit" type="submit">Generate Mad Lib</button>
 			</form>
 		</div>
 		<div class="result" ng-if="goodForm">
