@@ -7,6 +7,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Patua+One' rel='stylesheet' type='text/css'>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 	<script src="js/angular-messages.min.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.2.18/angular-animate.min.js"></script>
 	<script src="js/controller.js"></script>
 </head>
 <body>
@@ -25,7 +26,7 @@
 				<div class="column">
 					<label for="genders">Gender</label>
 					<select name="genders" ng-model='selected' required>
-						<option></option>
+						<option selected disabled>Select a gender</option>
 						<option ng-repeat="gender in genders" value='{{gender}}'>{{gender}}</option>
 					</select>
 					<div ng-if="madLibForm.$submitted" ng-messages="madLibForm.genders.$error">
@@ -82,7 +83,7 @@
 			<p>
 				What a great decision! With <span ng-if="selected=='female'">{{female.her}}</span><span ng-if="selected=='male'">{{male.his}}</span> new skills, <b>{{madLib.name}}</b> built a(n) <b>{{madLib.adjective}}</b> robot named <b>{{madLib.obnoxiousCelebrity}}</b> that not only loved <b>{{madLib.dirtyTask}}</b> but did it <b>{{madLib.hugeNumber}}</b> times faster.
 			</p>
-			<button class="submit" type="submit" ng-click="clear()">Start Over</button>
+			<button class="submit" ng-click="clear()">Start Over</button>
 		</div>
 	</div>
 </body>

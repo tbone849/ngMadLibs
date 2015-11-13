@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngMessages'])
+angular.module('myApp', ['ngMessages', 'ngAnimate'])
     .controller('setInputs', function($scope) {
         $scope.madLib = {
         	name: '',
@@ -31,7 +31,7 @@ angular.module('myApp', ['ngMessages'])
             }
         }
         $scope.clear = function(){
-            $scope.madLib = $scope.madLibCopy;
+            $scope.madLib = angular.copy($scope.madLibCopy);
             $scope.selected = '';
             $scope.goodForm = false;
             $scope.madLibForm.$setPristine();

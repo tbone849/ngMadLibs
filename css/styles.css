@@ -69,4 +69,17 @@ html, input, button, option {
 	font-family: 'Gloria Hallelujah', cursive;
 	padding: 3em;
 	font-size: 1.5em;
+	overflow: hidden;
+	transition: 1s linear all;
 }
+
+.result.ng-enter,
+.result.ng-leave.ng-leave-active {
+  max-height: 0;
+}
+
+.result.ng-leave,
+.result.ng-enter.ng-enter-active {
+  max-height: 15em;
+}
+
